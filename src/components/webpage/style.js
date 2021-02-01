@@ -33,7 +33,7 @@ export const FilterSection = styled.div`
     justify-content: center;
 `;
 export const CardSection = styled.div`
-	flex-basis: 50%;
+	flex-basis: 52%;
 	width: 100%;
     display: flex;
     box-sizing: border-box;
@@ -45,7 +45,7 @@ export const CardSection = styled.div`
 `;
 
 export const FooterSection = styled.div`
-	flex-basis: 5%;
+	flex-basis: 3%;
 	width: 100%;
 	height: 55px;
 	background-color: black;

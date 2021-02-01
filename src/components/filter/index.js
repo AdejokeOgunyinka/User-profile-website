@@ -1,43 +1,40 @@
 import { DropdownStyle, DropDown } from './style';
 
-const GenderOptions = [
-	{ value: 'Male', label: 'Male' },
-	{ value: 'Female', label: 'Female' },
-	{ value: 'Prefer to skip', label: 'Prefer to skip' }
-];
+export const GenderDropdown = ({ onChange, genderValues }) => {
+	const genderValue = Array.from(genderValues)
+	const newGenderValues = genderValue.map((genderType) => {
+		return {value: `${genderType}`, label: `${genderType}`}
+	})
 
-const PaymentOptions = [
-	{ value: 'money order', label: 'money order' },
-	{ value: 'cc', label: 'cc' },
-	{ value: 'check', label: 'check' },
-	{ value: 'paypal', label: 'paypal' }
-];
-
-const CreditCardTypeOptions = [
-	{ value: 'American Express', label: 'American Express' },
-	{ value: 'JCB', label: 'JCB' }
-];
-
-export const GenderDropdown = ({ onChange }) => {
 	return (
 		<DropdownStyle>
-			<DropDown options={GenderOptions} placeholder='Filter by gender' onChange={onChange}/>
+			<DropDown options={newGenderValues} placeholder='Filter by gender' onChange={onChange}/>
 		</DropdownStyle>
 	);
 };
 
-export const PaymentOptionsDropdown = ({ onChange }) => {
+export const PaymentOptionsDropdown = ({ onChange, paymentValues }) => {
+	const paymentTypes = Array.from(paymentValues)
+	const newPaymentValues = paymentTypes.map((paymentType) => {
+		return {value: `${paymentType}`, label: `${paymentType}`}
+	})
+
 	return (
 		<DropdownStyle>
-			<DropDown options={PaymentOptions} placeholder='Filter by payment options' onChange={onChange}/>
+			<DropDown options={newPaymentValues} placeholder='Filter by payment options' onChange={onChange}/>
 		</DropdownStyle>
 	);
 };
 
-export const CreditCardTypeDropdown = ({ onChange }) => {
+export const CreditCardTypeDropdown = ({ onChange, creditCardValues }) => {
+	const creditCardValue = Array.from(creditCardValues)
+	const newCreditTypeOptions = creditCardValue.map((creditCardType) => {
+		return {value: `${creditCardType}`, label: `${creditCardType}`}
+	})
+
 	return (
 		<DropdownStyle>
-			<DropDown options={CreditCardTypeOptions} placeholder='Filter by credit card type' onChange={onChange}/>
+			<DropDown options={newCreditTypeOptions} placeholder='Filter by credit card type' onChange={onChange}/>
 		</DropdownStyle>
 	);
 };

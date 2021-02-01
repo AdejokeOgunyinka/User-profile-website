@@ -34,6 +34,15 @@ const Webpage = () => {
 		setPaginatedValues(() => [ ...credit_card_detail.slice(0, 20) ]);
 	};
 
+	const creditCardType = values.map((person) => person.CreditCardType);
+	const creditCardTypeValues = new Set(creditCardType);
+
+	const genderType = values.map((person) => person.Gender);
+	const genderValues = new Set(genderType)
+
+	const paymentType = values.map((person) => person.PaymentMethod);
+	const paymentValues = new Set(paymentType)
+
 	const filterGender = (query) => {
 		const gender_detail = values.filter((person) => person.Gender.includes(query));
 		setPaginatedValues(() => [ ...gender_detail.slice(0, 20) ]);
@@ -75,9 +84,9 @@ const Webpage = () => {
 				<Search onChange={(e) => handleSearch(e.target.value)} />
 			</SearchSection>
 			<FilterSection>
-				<GenderDropdown onChange={(e) => filterGender(e.value)} />
-				<CreditCardTypeDropdown onChange={(e) => filterCreditCardType(e.value)} />
-				<PaymentOptionsDropdown onChange={(e) => filterPaymentMethod(e.value)} />
+				<GenderDropdown onChange={(e) => filterGender(e.value)} genderValues={genderValues}/>
+				<CreditCardTypeDropdown onChange={(e) => filterCreditCardType(e.value)} creditCardValues={creditCardTypeValues} />
+				<PaymentOptionsDropdown onChange={(e) => filterPaymentMethod(e.value)} paymentValues={paymentValues}/>
 			</FilterSection>
 			<Navigation
 				onClickLeftArrow={() => handlePagination('prev')}

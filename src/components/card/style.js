@@ -15,10 +15,9 @@ export const CardStyle = styled.div`
 export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
-    flex-basis: 23%;
+    flex-basis: 22%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-right: 20px;
-    margin-top: 20px;
+    margin: 15px;
     background-color: white;
     justify-content: center;
     align-items: center;
