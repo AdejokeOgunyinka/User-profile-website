@@ -70,6 +70,7 @@ const Webpage = () => {
 					filtering = [ ...values.filter((value) => value[key] === filterData[key]) ];
 				}
 			}
+			return filtering;
 		});
 		setPaginatedValues(() => [ ...filtering ]);
 	};
