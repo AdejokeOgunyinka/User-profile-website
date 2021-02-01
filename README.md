@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website provides profile information  that it fetches from an API, which it then displays in a beautiful way.
 
 ## Available Scripts
 
