@@ -29,28 +29,49 @@ const Webpage = () => {
 		setPaginatedValues(() => [ ...search_detail.slice(0, 20) ]);
 	};
 
-	const filterCreditCardType = (query) => {
-		const credit_card_detail = values.filter((person) => person.CreditCardType.includes(query));
-		setPaginatedValues(() => [ ...credit_card_detail.slice(0, 20) ]);
-	};
-
-	const creditCardType = values.map((person) => person.CreditCardType);
-	const creditCardTypeValues = new Set(creditCardType);
+	const creditCard = values.map((person) => person.CreditCardType);
+	const creditCardTypeValues = new Set(creditCard);
 
 	const genderType = values.map((person) => person.Gender);
-	const genderValues = new Set(genderType)
+	const genderValues = new Set(genderType);
 
 	const paymentType = values.map((person) => person.PaymentMethod);
-	const paymentValues = new Set(paymentType)
+	const paymentValues = new Set(paymentType);
+
+	const [ filterData, setFilterData ] = useState({ Gender: '', CreditCardType: '', PaymentMethod: '' });
+
+	const filterCreditCardType = (query) => {
+		const newFilter = { ...filterData, CreditCardType: query };
+		setFilterData((prev) => ({ ...prev, CreditCardType: query }));
+		generalFilter(newFilter);
+	};
 
 	const filterGender = (query) => {
-		const gender_detail = values.filter((person) => person.Gender.includes(query));
-		setPaginatedValues(() => [ ...gender_detail.slice(0, 20) ]);
+		const newFilter = { ...filterData, Gender: query };
+		setFilterData((prev) => ({ ...prev, Gender: query }));
+		generalFilter(newFilter);
 	};
 
 	const filterPaymentMethod = (query) => {
-		const payment_method_detail = values.filter((person) => person.PaymentMethod.includes(query));
-		setPaginatedValues(() => [ ...payment_method_detail.slice(0, 20) ]);
+		const newFilter = { ...filterData, PaymentMethod: query };
+		setFilterData((prev) => ({ ...prev, PaymentMethod: query }));
+
+		generalFilter(newFilter);
+	};
+
+	const generalFilter = (filterData) => {		
+		const keys = Object.keys(filterData);
+		let filtering = [];
+		keys.map((key) => {
+			if (filterData[key] !== '') {
+				if (filtering.length > 0) {
+					filtering = [ ...filtering.filter((value) => value[key] === filterData[key]) ];
+				} else {
+					filtering = [ ...values.filter((value) => value[key] === filterData[key]) ];
+				}
+			}
+		});
+		setPaginatedValues(() => [ ...filtering ]);
 	};
 
 	const [ currentPage, setPage ] = useState(1);
@@ -84,9 +105,12 @@ const Webpage = () => {
 				<Search onChange={(e) => handleSearch(e.target.value)} />
 			</SearchSection>
 			<FilterSection>
-				<GenderDropdown onChange={(e) => filterGender(e.value)} genderValues={genderValues}/>
-				<CreditCardTypeDropdown onChange={(e) => filterCreditCardType(e.value)} creditCardValues={creditCardTypeValues} />
-				<PaymentOptionsDropdown onChange={(e) => filterPaymentMethod(e.value)} paymentValues={paymentValues}/>
+				<GenderDropdown onChange={(e) => filterGender(e.value)} genderValues={genderValues} />
+				<CreditCardTypeDropdown
+					onChange={(e) => filterCreditCardType(e.value)}
+					creditCardValues={creditCardTypeValues}
+				/>
+				<PaymentOptionsDropdown onChange={(e) => filterPaymentMethod(e.value)} paymentValues={paymentValues} />
 			</FilterSection>
 			<Navigation
 				onClickLeftArrow={() => handlePagination('prev')}
