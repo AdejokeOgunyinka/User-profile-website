@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {FaEnvelope, FaPhoneAlt, FaRegCreditCard, FaPaypal, FaVenusMars} from 'react-icons/fa';
+import {FaEnvelope, FaPhoneAlt, FaRegCreditCard, FaRegMoneyBillAlt, FaVenusMars} from 'react-icons/fa';
 
 
 export const CardStyle = styled.div`
@@ -41,9 +41,10 @@ export const CardIcon = styled(FaRegCreditCard)`
 	margin-right: 10px;
 `
 
-export const PaymentIcon = styled(FaPaypal)`
+export const PaymentIcon = styled(FaRegMoneyBillAlt)`
 	color: #00103FFB;
 	margin-right: 10px;
+	font-size: 25px;
 `
 
 export const GenderIcon = styled(FaVenusMars)`
