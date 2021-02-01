@@ -28,7 +28,9 @@ export const InputStyle = styled.input`
 
 export const SearchIcon = styled(FaSearch)`
     flex-basis: 10%;
-    font-size: 55px;
+    font-size: 30px;
     color: grey;
     cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
 `;

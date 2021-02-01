@@ -19,8 +19,7 @@ export const CardContainer = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 15px;
     background-color: white;
-    justify-content: center;
-    align-items: center;
+	padding: 25px;
     box-sizing: border-box;
 	align-self: center;
 `
@@ -56,11 +55,9 @@ export const GenderIcon = styled(FaVenusMars)`
 export const ContentStyle = styled.div`
 	display: flex;
 	flex-direction: row;
-	width: 50%;
+	width: 70%;
 	height: 10%;
 	margin-top: 10px;
-	justify-content: center;
-	align-items: center;
     box-sizing: border-box;
 `;
 

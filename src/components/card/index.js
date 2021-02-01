@@ -26,7 +26,7 @@ const Card = ({ children, paginatedValues }) => {
                         </Text>
                     </ContentStyle>
                     <ContentStyle>
-                        <GenderIcon/>
+                        <Text><GenderIcon/></Text>
                         <Text>{result.Gender}</Text>
                     </ContentStyle>
                     <ContentStyle>
@@ -34,7 +34,7 @@ const Card = ({ children, paginatedValues }) => {
                         <Text>{result.Email}</Text>
                     </ContentStyle>
                     <ContentStyle>
-                        <PhoneIcon/>
+                        <Text><PhoneIcon/></Text>
                         <Text>{result.PhoneNumber}</Text>
                     </ContentStyle>
                     <ContentStyle>
