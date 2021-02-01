@@ -9,7 +9,8 @@ export const NavigationStyle = styled.div`
 	justify-content: flex-end;
 	align-self: center;
 	box-sizing: border-box;
-	flex-basis: 5%
+	flex-basis: 5%;
+	margin-top: 10px;
 `;
 
 export const LeftArrow = styled(FaAngleLeft)`

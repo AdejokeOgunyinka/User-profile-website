@@ -23,6 +23,7 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+	align-self: center;
 `
 
 export const EmailIcon = styled(FaEnvelope)`

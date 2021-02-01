@@ -12,15 +12,18 @@ export const SearchStyle = styled.div`
     border: 1px solid grey;
     border-radius: 25px;
     background-color: white;
+    box-sizing: border-box;
 `;
 
 export const InputStyle = styled.input`
 	flex-basis: 60%;
 	height: 90%;
+    width: 50%;
     border: none;
     outline: none;
     margin-left: 15px;
     font-size: 20px;
+    box-sizing: border-box;
 `;
 
 export const SearchIcon = styled(FaSearch)`
