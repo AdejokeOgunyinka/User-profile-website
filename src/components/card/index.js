@@ -14,7 +14,7 @@ const Card = ({ children, paginatedValues }) => {
 	return (
 		<CardStyle>
 			{paginatedValues.map((result) => (
-				<CardContainer>
+				<CardContainer key={result.UserName}>
 					{' '}
 					{children}
                     <ContentStyle>

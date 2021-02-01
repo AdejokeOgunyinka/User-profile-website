@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {FaUser, FaEnvelope, FaPhoneAlt, FaRegCreditCard, FaPaypal, FaVenusMars} from 'react-icons/fa';
+import {FaEnvelope, FaPhoneAlt, FaRegCreditCard, FaPaypal, FaVenusMars} from 'react-icons/fa';
 
 
 export const CardStyle = styled.div`
@@ -65,7 +65,7 @@ export const ContentStyle = styled.div`
 
 export const Text = styled.text`
 	color: #00103FFB;
-	font-size: 18px;
+	font-size: 20px;
 	font-family: Raleway;
 	font-weight: 300;
 	align-self: center;
