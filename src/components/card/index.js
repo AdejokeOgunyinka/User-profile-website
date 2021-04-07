@@ -5,8 +5,8 @@ import {
 	GenderIcon,
 	EmailIcon,
 	PhoneIcon,
-	CardIcon,
-	PaymentIcon,
+	// CardIcon,
+	// PaymentIcon,
 	Text
 } from './style';
 
