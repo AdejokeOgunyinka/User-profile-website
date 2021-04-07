@@ -19,25 +19,28 @@ const Card = ({ children, paginatedValues }) => {
 					{children}
                     <ContentStyle>
                         <Text>
-                            {result.FirstName}
+                            {result.name.title}
                         </Text>
                         <Text>
-                            {result.LastName}
+                            {result.name.first}
+                        </Text>
+                        <Text>
+                            {result.name.last}
                         </Text>
                     </ContentStyle>
                     <ContentStyle>
                         <Text><GenderIcon/></Text>
-                        <Text>{result.Gender}</Text>
+                        <Text>{result.gender}</Text>
                     </ContentStyle>
                     <ContentStyle>
                         <Text><EmailIcon/> </Text>
-                        <Text>{result.Email}</Text>
+                        <Text>{result.email}</Text>
                     </ContentStyle>
                     <ContentStyle>
                         <Text><PhoneIcon/></Text>
-                        <Text>{result.PhoneNumber}</Text>
+                        <Text>{result.phone}</Text>
                     </ContentStyle>
-                    <ContentStyle>
+                    {/* <ContentStyle>
                         <Text><CardIcon/></Text>
                         <Text>{result.CreditCardNumber}</Text>
                         <Text>{result.CreditCardType}</Text>
@@ -45,7 +48,7 @@ const Card = ({ children, paginatedValues }) => {
                     <ContentStyle>
                         <PaymentIcon/>
                         <Text>{result.PaymentMethod}</Text>
-                    </ContentStyle>
+                    </ContentStyle> */}
 				</CardContainer>
 			))}
 		</CardStyle>

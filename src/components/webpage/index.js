@@ -11,9 +11,9 @@ const Webpage = () => {
 	const [ paginatedValues, setPaginatedValues ] = useState([]);
 
 	const fetchFunction = async () => {
-		const data = await fetch('https://api.enye.tech/v1/challenge/records');
+		const data = await fetch('https://randomuser.me/api/?results=200'); //https://api.enye.tech/v1/challenge/records
 		const results = await data.json();
-		const value = results.records.profiles.slice(0, 100);
+		const value = results.results.slice(0, 100);
 
 		setItems(() => [ ...value ]);
 		setPaginatedValues(() => [ ...value.slice(0, 20) ]);
